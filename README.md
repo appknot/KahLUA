@@ -24,6 +24,7 @@ label.change(string: "34", key: .font, value: UIFont.boldSystemFont(ofSize: 30))
 // 모든 특정 문자열에 옵션 값을 변경
 label.changes(string: "4", key: .foregroundColor, value: UIColor.red)
 ```
+![스크린샷 2024-01-16 오후 5 46 06](https://github.com/appknot/KahLUA/assets/59425581/e741dfef-a9be-4a27-b930-c5d71da4dcd2)
 
 ## Installation
 
