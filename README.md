@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/KahLUA.svg?style=flat)](https://cocoapods.org/pods/KahLUA)
 
 ## Example
-### KLLabel()
+### KLLabel
 ```ruby
 let label = KLLabel()
 label.text = "1234\n1234\n1234\n1234"
@@ -23,13 +23,6 @@ label.change(string: "2", key: .font, value: UIFont.boldSystemFont(ofSize: 24))
 label.change(string: "34", key: .font, value: UIFont.boldSystemFont(ofSize: 30))
 // 모든 특정 문자열에 옵션 값을 변경
 label.changes(string: "4", key: .foregroundColor, value: UIColor.red)
-self.view.addSubview(label)
-        
-// KLLabel를 상속받아, 프로젝트별 스타일 가이드 생성
-let label2 = PROJECTLabel(frame: .init(x: 14, y: 88, width: 300, height: 60))
-label2.style = .navigationTitle
-label2.text = "1234"
-self.view.addSubview(label2)
 ```
 
 ## Installation
