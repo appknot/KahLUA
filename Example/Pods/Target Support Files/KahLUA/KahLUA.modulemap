@@ -1,0 +1,6 @@
+framework module KahLUA {
+  umbrella header "KahLUA-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "KahLUA",
+  "version": "0.1.0",
+  "summary": "A short description of KahLUA.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/woody-iOS/KahLUA",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "woody-iOS": "woody@appknot.com"
+  },
+  "source": {
+    "git": "https://github.com/woody-iOS/KahLUA.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "KahLUA/Classes/**/*"
+}
