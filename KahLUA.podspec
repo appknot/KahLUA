@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KahLUA'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'KahLUA'
 
 # This description is used to generate tags and improve search results.
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
   s.description      = 'This is the private KahLUA used by Appknot.'
 
-  s.homepage         = 'https://github.com/woody-iOS/KahLUA'
+  s.homepage         = 'https://github.com/appknot/KahLUA'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'woody-iOS' => 'woody@appknot.com' }
