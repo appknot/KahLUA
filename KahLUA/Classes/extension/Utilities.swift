@@ -9,7 +9,7 @@ import UIKit
 
 public class Utilities {
     /// 상단 safe area 높이
-    class func safeAreaTopInset() -> CGFloat? {
+    public class func safeAreaTopInset() -> CGFloat? {
         if #available(iOS 13.0, *) {
             let window = UIApplication.shared.windows.first
             return window?.safeAreaInsets.top
@@ -22,7 +22,7 @@ public class Utilities {
     }
     
     /// 하단 safe area 높이
-    class func safeAreaBottomInset() -> CGFloat? {
+    public class func safeAreaBottomInset() -> CGFloat? {
         if #available(iOS 13.0, *) {
             let window = UIApplication.shared.windows.first
             return window?.safeAreaInsets.bottom

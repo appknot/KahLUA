@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KahLUA'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'KahLUA'
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,15 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '13.0'
 
-  s.source_files = 'KahLUA/Classes', 'KahLUA/Classes/baseComponent', 'KahLUA/Classes/extension'
+  s.source_files = 'KahLUA/Classes' 'KahLUA/Classes/extension'
+  
+  s.subspec 'baseComponent' do |ss|
+      ss.source_files = 'KahLUA/Classes/baseComponent/*'
+  end
+  
+  s.subspec 'baseComponent' do |ss|
+      ss.source_files = 'KahLUA/Classes/extension/*'
+  end
   
   # s.resource_bundles = {
   #   'KahLUA' => ['KahLUA/Assets/*.png']
