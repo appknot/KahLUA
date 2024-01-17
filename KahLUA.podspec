@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '13.0'
 
-  s.source_files = 'KahLUA/Classes' 'KahLUA/Classes/extension'
+  s.source_files = 'KahLUA/Classes'
   
   s.subspec 'baseComponent' do |ss|
       ss.source_files = 'KahLUA/Classes/baseComponent/*'
