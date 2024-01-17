@@ -30,12 +30,12 @@ Pod::Spec.new do |s|
 
   s.source_files = 'KahLUA/Classes'
   
-  s.subspec 'baseComponent' do |ss|
-      ss.source_files = 'KahLUA/Classes/baseComponent/*'
+  s.subspec 'BaseComponent' do |ss|
+      ss.source_files = 'KahLUA/Classes/BaseComponent/*'
   end
   
-  s.subspec 'extension' do |ss|
-      ss.source_files = 'KahLUA/Classes/extension/*'
+  s.subspec 'Bxtension' do |ss|
+      ss.source_files = 'KahLUA/Classes/Extension/*'
   end
   
   # s.resource_bundles = {

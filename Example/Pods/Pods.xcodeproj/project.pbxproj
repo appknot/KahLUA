@@ -188,17 +188,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		12693B432B5652F200588FD7 /* baseComponent */ = {
+		12693B432B5652F200588FD7 /* BaseComponent */ = {
 			isa = PBXGroup;
 			children = (
 				12693B442B5652F200588FD7 /* KLLabel.swift */,
 				12693B452B5652F200588FD7 /* BaseAlertViewController.swift */,
 			);
-			name = baseComponent;
-			path = KahLUA/Classes/baseComponent;
+			name = BaseComponent;
+			path = KahLUA/Classes/BaseComponent;
 			sourceTree = "<group>";
 		};
-		12693B472B5652F200588FD7 /* extension */ = {
+		12693B472B5652F200588FD7 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				12693B482B5652F200588FD7 /* UIApplication+AK.swift */,
@@ -219,8 +219,8 @@
 				12693B572B5652F200588FD7 /* UIColor+AK.swift */,
 				12693B582B5652F200588FD7 /* String+AK.swift */,
 			);
-			name = extension;
-			path = KahLUA/Classes/extension;
+			name = Extension;
+			path = KahLUA/Classes/Extension;
 			sourceTree = "<group>";
 		};
 		2A47BAC895A8940960097EF0DB31D5A3 /* Development Pods */ = {
@@ -252,8 +252,8 @@
 			isa = PBXGroup;
 			children = (
 				12693B462B5652F200588FD7 /* KahLUA.swift */,
-				12693B432B5652F200588FD7 /* baseComponent */,
-				12693B472B5652F200588FD7 /* extension */,
+				12693B432B5652F200588FD7 /* BaseComponent */,
+				12693B472B5652F200588FD7 /* Extension */,
 				E502AAD315BD4977918953ECC8CFA84D /* Pod */,
 				BFA1E4BC75C7B366A908CD90EE00764D /* Support Files */,
 			);
