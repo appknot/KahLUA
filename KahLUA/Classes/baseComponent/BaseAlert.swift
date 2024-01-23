@@ -54,7 +54,8 @@ public class BaseAlert: UIViewController {
         self.modalPresentationStyle = .overFullScreen
         
         // dimmed background
-        setupBackgroundView(frame: self.view.bounds, color: UIColor.init(rgb: 0x000000, alpha: 0.5), isEnableTabDismiss: true)
+        
+        setupBackgroundView(frame: self.view.bounds, color: UIColor.init(white: 0, alpha: 0.5), isEnableTabDismiss: true)
         view.addSubview(backgroundView)
         view.addSubview(shadowView)
         
@@ -89,7 +90,7 @@ public class BaseAlert: UIViewController {
         // button 영역
         alertView.addSubview(buttonStackView)
         buttonStackView.axis = .horizontal
-        buttonStackView.spacing = 10
+        buttonStackView.spacing = 1
         buttonStackView.distribution = .fillEqually
         
         buttonStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -156,7 +157,12 @@ public class BaseAlert: UIViewController {
         alertView.layer.cornerRadius = cornerRadius
         
         if isShadowUse {
-            shadowView.layer.applySketchShadow(color: .black, alpha: 0.2, x: 2, y: 2, blur: 10, spread: 0)
+            shadowView.layer.masksToBounds = false
+            shadowView.layer.shadowColor = UIColor.black.cgColor
+            shadowView.layer.shadowOpacity = 0.2
+            shadowView.layer.shadowOffset = CGSize(width: 2, height: 2)
+            shadowView.layer.shadowRadius = 10 / 2.0
+            shadowView.layer.shadowPath = nil
         }
     }
     /**
@@ -201,16 +207,13 @@ public class BaseAlert: UIViewController {
         self.dismiss(animated: false)
     }
     
-    /**
-     가장 최상위 뷰에 얼럿 뷰를 띄움
-     ~~~
-     // example
-     CustomAlertViewController.topViewController()?.present(alertView, animated: false)
-     ~~~
-     */
-    
     public func show() {
-        UIApplication.topViewController()?.present(self, animated: false, completion: nil)
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            topController.present(self, animated: false, completion: nil)
+        }
     }
 }
 
