@@ -83,9 +83,9 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         // alert 생성
         let alert = BaseAlert(title: "알림", message: "알림 팝업입니다.")
+        
         
         // margin, backgroundColor, spacing등 configuration 설정
         // 아래 setupBackgroundView은 모두 default값으로 변경이 없으면 호출하지 않아도됨.
@@ -113,9 +113,9 @@ class ViewController: UIViewController {
 //        )
         
         // title, messageLabel 변경
-        alert.titleLabel.font = .systemFont(ofSize: 20)
-        alert.messageLabel.textColor = .gray
-        alert.messageLabel.numberOfLines = 0
+//        alert.titleLabel.font = .systemFont(ofSize: 20)
+//        alert.messageLabel.textColor = .gray
+//        alert.messageLabel.numberOfLines = 0
         
 //        alert.titleAttributedString = NSMutableAttributedString(string: "알림", attributes: [.foregroundColor: UIColor.red])
 //        alert.contentAttributedString = NSMutableAttributedString(string: "알림 팝업입니다.", attributes: [.foregroundColor: UIColor.blue])

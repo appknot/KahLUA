@@ -7,6 +7,17 @@
 
 import UIKit
 
+public class BaseAlertAppearance {
+    public static let shared = BaseAlertAppearance()
+    
+    public var titleFont: UIFont?
+    public var titleColor: UIColor?
+    public var messageFont: UIFont?
+    public var messageColor: UIColor?
+    
+    // TODO: label? 속성값?
+}
+
 public class BaseAlert: UIViewController {
     
     private let backgroundView = UIView()
@@ -21,8 +32,18 @@ public class BaseAlert: UIViewController {
     private var alertBottom: NSLayoutConstraint?
     private var buttonStackViewHeight: NSLayoutConstraint?
     
-    public let titleLabel = UILabel()
-    public let messageLabel = UILabel()
+    public let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = BaseAlertAppearance.shared.titleFont
+        label.textColor = BaseAlertAppearance.shared.titleColor
+        return label
+    }()
+    public let messageLabel: UILabel = {
+        let label = UILabel()
+        label.font = BaseAlertAppearance.shared.messageFont
+        label.textColor = BaseAlertAppearance.shared.messageColor
+        return label
+    }()
     
     public var titleAttributedString: NSMutableAttributedString {
         get {
