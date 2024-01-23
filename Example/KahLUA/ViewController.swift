@@ -89,40 +89,36 @@ class ViewController: UIViewController {
         
         // margin, backgroundColor, spacing등 configuration 설정
         // 아래 setupBackgroundView은 모두 default값으로 변경이 없으면 호출하지 않아도됨.
-        alert.setupBackgroundView(
-            frame: alert.view.bounds,
-            color: UIColor.init(rgb: 0x000000, alpha: 0.5),
-            isEnableTabDismiss: true
-        )
+//        alert.setupBackgroundView(
+//            frame: alert.view.bounds,
+//            color: UIColor.init(rgb: 0x000000, alpha: 0.5),
+//            isEnableTabDismiss: true
+//        )
         // 아래 alertViewConfiguration은 모두 default값으로 변경이 없으면 호출하지 않아도됨.
-        alert.alertViewConfiguration(
-            leadingMargin: 25,
-            topMinMargin: 100,
-            trailingMargin: -25,
-            bottomMinMargin: -100,
-            cornerRadius: 10,
-            isShadowUse: true
-        )
+//        alert.alertViewConfiguration(
+//            leadingMargin: 25,
+//            topMinMargin: 100,
+//            trailingMargin: -25,
+//            bottomMinMargin: -100,
+//            cornerRadius: 10,
+//            isShadowUse: true
+//        )
         // 아래 buttonStackViewConfiguration은 모두 default값으로 변경이 없으면 호출하지 않아도됨.
-        alert.buttonStackViewConfiguration(
-            backgroundColor: .white,
-            axis: .horizontal,
-            spacing:1,
-            distribution: .fillEqually,
-            height: 50
-        )
+//        alert.buttonStackViewConfiguration(
+//            backgroundColor: .white,
+//            axis: .horizontal,
+//            spacing:1,
+//            distribution: .fillEqually,
+//            height: 50
+//        )
         
         // title, messageLabel 변경
         alert.titleLabel.font = .systemFont(ofSize: 20)
         alert.messageLabel.textColor = .gray
         alert.messageLabel.numberOfLines = 0
         
-        alert.titleAttributedString = NSMutableAttributedString(string: "알림", attributes: [.foregroundColor: UIColor.red])
-        alert.contentAttributedString = NSMutableAttributedString(string: "알림 팝업입니다.", attributes: [.foregroundColor: UIColor.blue])
-        
-        // KLLabel 옵션 사용
-        alert.titleLabel.change(string: "림", key: .font, value: UIFont.systemFont(ofSize: 25))
-        alert.messageLabel.change(string: "알림", key: .foregroundColor, value: UIColor.black)
+//        alert.titleAttributedString = NSMutableAttributedString(string: "알림", attributes: [.foregroundColor: UIColor.red])
+//        alert.contentAttributedString = NSMutableAttributedString(string: "알림 팝업입니다.", attributes: [.foregroundColor: UIColor.blue])
         
         // BaseAlertAction 생성
         let cancelAction = BaseAlertAction(title: "취소", handler: {

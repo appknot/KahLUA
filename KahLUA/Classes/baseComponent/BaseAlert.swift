@@ -21,8 +21,8 @@ public class BaseAlert: UIViewController {
     private var alertBottom: NSLayoutConstraint?
     private var buttonStackViewHeight: NSLayoutConstraint?
     
-    public let titleLabel = KLLabel()
-    public let messageLabel = KLLabel()
+    public let titleLabel = UILabel()
+    public let messageLabel = UILabel()
     
     public var titleAttributedString: NSMutableAttributedString {
         get {
