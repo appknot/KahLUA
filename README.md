@@ -30,7 +30,33 @@ label.changes(string: "4", key: .foregroundColor, value: UIColor.red)
 ```ruby
 // alert 생성
 let alert = BaseAlert(title: "알림", message: "알림 팝업입니다.")
+alert.titleLabel.font = .systemFont(ofSize: 20)
+alert.messageLabel.textColor = .gray
+alert.messageLabel.numberOfLines = 0
+
+// BaseAlertAction 생성
+let cancelAction = BaseAlertAction(title: "취소", handler: {
+     alert.dismiss(animated: false)
+})
+cancelAction.backgroundColor = .black
+cancelAction.titleLabel.font = .systemFont(ofSize: 15)
+cancelAction.titleLabel.textColor = .white
         
+let confirmAction = BaseAlertAction(title: "확인", handler: {
+     alert.dismiss(animated: false)
+})
+confirmAction.backgroundColor = .black
+confirmAction.titleLabel.font = .systemFont(ofSize: 15)
+confirmAction.titleLabel.textColor = .white
+        
+alert.addAction(cancelAction)
+alert.addAction(confirmAction)
+        
+alert.show()
+```
+
+#### BaseAlert Configuration
+```ruby        
 // margin, backgroundColor, spacing등 configuration 설정
 // 아래 setupBackgroundView은 모두 default값으로 변경이 없으면 호출하지 않아도됨.
 alert.setupBackgroundView(
@@ -54,40 +80,19 @@ alert.buttonStackViewConfiguration(
     spacing:1,
     distribution: .fillEqually,
     height: 50
-)
-        
-// title, messageLabel 변경
-alert.titleLabel.font = .systemFont(ofSize: 20)
-alert.messageLabel.textColor = .gray
-alert.messageLabel.numberOfLines = 0
-        
+)     
+```
+
+#### BaseAlert AttributedString
+```ruby 
 alert.titleAttributedString = NSMutableAttributedString(string: "알림", attributes: [.foregroundColor: UIColor.red])
 alert.contentAttributedString = NSMutableAttributedString(string: "알림 팝업입니다.", attributes: [.foregroundColor: UIColor.blue])
         
 // KLLabel 옵션 사용
 alert.titleLabel.change(string: "림", key: .font, value: UIFont.systemFont(ofSize: 25))
 alert.messageLabel.change(string: "알림", key: .foregroundColor, value: UIColor.black)
-        
-// BaseAlertAction 생성
-let cancelAction = BaseAlertAction(title: "취소", handler: {
-     alert.dismiss(animated: false)
-})
-cancelAction.backgroundColor = .black
-cancelAction.titleLabel.font = .systemFont(ofSize: 15)
-cancelAction.titleLabel.textColor = .white
-        
-let confirmAction = BaseAlertAction(title: "확인", handler: {
-     alert.dismiss(animated: false)
-})
-confirmAction.backgroundColor = .black
-confirmAction.titleLabel.font = .systemFont(ofSize: 15)
-confirmAction.titleLabel.textColor = .white
-        
-alert.addAction(cancelAction)
-alert.addAction(confirmAction)
-        
-alert.show()
-```
+```   
+
 ![스크린샷 2024-01-23 오전 11 20 15](https://github.com/appknot/KahLUA/assets/59425581/8e114263-21a9-4ecf-92a1-794f9ec9dc48)
 
 
