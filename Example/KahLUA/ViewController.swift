@@ -88,6 +88,7 @@ class ViewController: UIViewController {
         let alert = BaseAlert(title: "알림", message: "알림 팝업입니다.")
         
         // margin, backgroundColor, spacing등 configuration 설정
+        // 아래 setupBackgroundView은 모두 default값으로 변경이 없으면 호출하지 않아도됨.
         alert.setupBackgroundView(
             frame: alert.view.bounds,
             color: UIColor.init(rgb: 0x000000, alpha: 0.5),

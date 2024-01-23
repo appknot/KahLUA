@@ -54,7 +54,7 @@ public class BaseAlert: UIViewController {
         self.modalPresentationStyle = .overFullScreen
         
         // dimmed background
-        setupBackgroundView(frame: self.view.bounds, color: .black, isEnableTabDismiss: true)
+        setupBackgroundView(frame: self.view.bounds, color: UIColor.init(rgb: 0x000000, alpha: 0.5), isEnableTabDismiss: true)
         view.addSubview(backgroundView)
         view.addSubview(shadowView)
         
