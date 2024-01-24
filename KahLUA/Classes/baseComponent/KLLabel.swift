@@ -94,6 +94,32 @@ open class KLLabel: UILabel {
         
     }
     
+    /// KLLabel의 문자열에서 모든 특정 문자열 옵션 변경
+    ///  - Parameters:
+    ///     - regularExpression: 옵션을 줄 문자에 해당되는 정규식
+    ///     - key: 변경할 옵션 (NSAttributedString.Key)
+    ///     - value: 변경 값 (Any)
+    open func changes(regularExpression: String, key: NSAttributedString.Key, value: Any) {
+        guard let attributedText = self.attributedText else { return }
+        guard let text = self.text else { return }
+        
+        let attributedString = NSMutableAttributedString(attributedString: attributedText)
+        
+        do {
+            let regex = try NSRegularExpression(pattern: regularExpression, options: [])
+            let result = regex.matches(in: text, options: [], range: NSRange(location: 0, length: text.count))
+            let ranges = result.map {$0.range}
+            
+            for range in ranges {
+                attributedString.addAttribute(key, value: value, range: range)
+            }
+            self.attributedText = attributedString
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
     }

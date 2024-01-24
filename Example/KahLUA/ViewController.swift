@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         
         // attributedText를 사용하지 않아도 kern, lineHeight 속성을 사용할 수 있음
         let label = KLLabel()
-        label.text = "1234\n1234\n1234\n1234"
+        label.text = "1234\n1a2b3c4d5e6f7g8h"
         label.backgroundColor = .blue
         label.frame = .init(x: 100, y: 300, width: 200, height: 300)
         label.numberOfLines = 5
@@ -70,6 +70,7 @@ class ViewController: UIViewController {
         label.change(string: "34", key: .font, value: UIFont.boldSystemFont(ofSize: 30))
         // 모든 특정 문자열에 옵션 값을 변경
         label.changes(string: "4", key: .foregroundColor, value: UIColor.red)
+        label.changes(regularExpression: "[A-Za-z]", key: .foregroundColor, value: UIColor.purple)
         self.view.addSubview(label)
         
         // KLLabel를 상속받아, 프로젝트별 스타일 가이드 생성
