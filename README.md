@@ -9,7 +9,7 @@
 ### KLLabel
 ```ruby
 let label = KLLabel()
-label.text = "1234\n1234\n1234\n1234"
+label.text = "1234\n1a2b3c4d5e6f7g8h"
 label.backgroundColor = .blue
 label.frame = .init(x: 100, y: 300, width: 200, height: 300)
 label.numberOfLines = 5
@@ -23,8 +23,18 @@ label.change(string: "2", key: .font, value: UIFont.boldSystemFont(ofSize: 24))
 label.change(string: "34", key: .font, value: UIFont.boldSystemFont(ofSize: 30))
 // 모든 특정 문자열에 옵션 값을 변경
 label.changes(string: "4", key: .foregroundColor, value: UIColor.red)
+label.changes(regularExpression: "[A-Za-z]", key: .foregroundColor, value: UIColor.purple)
 ```
-![스크린샷 2024-01-16 오후 5 46 06](https://github.com/appknot/KahLUA/assets/59425581/e741dfef-a9be-4a27-b930-c5d71da4dcd2)
+![스크린샷 2024-01-24 오전 10 56 35](https://github.com/appknot/KahLUA/assets/59425581/68cdd27a-ced3-4600-b01a-1b58aecc186a)
+
+### BaseAlert Appearance
+```ruby
+// 공용 옵션 설정
+BaseAlertAppearance.shared.titleFont = .systemFont(ofSize: 30)
+BaseAlertAppearance.shared.titleColor = .brown
+BaseAlertAppearance.shared.messageFont = .systemFont(ofSize: 25)
+BaseAlertAppearance.shared.messageColor = .gray
+```
 
 ### BaseAlert
 ```ruby
@@ -55,7 +65,7 @@ alert.addAction(confirmAction)
 alert.show()
 ```
 
-#### BaseAlert Configuration
+### BaseAlert Configuration
 ```ruby        
 // margin, backgroundColor, spacing등 configuration 설정
 // 아래 setupBackgroundView은 모두 default값으로 변경이 없으면 호출하지 않아도됨.
@@ -83,14 +93,10 @@ alert.buttonStackViewConfiguration(
 )     
 ```
 
-#### BaseAlert AttributedString
+### BaseAlert AttributedString
 ```ruby 
 alert.titleAttributedString = NSMutableAttributedString(string: "알림", attributes: [.foregroundColor: UIColor.red])
 alert.contentAttributedString = NSMutableAttributedString(string: "알림 팝업입니다.", attributes: [.foregroundColor: UIColor.blue])
-        
-// KLLabel 옵션 사용
-alert.titleLabel.change(string: "림", key: .font, value: UIFont.systemFont(ofSize: 25))
-alert.messageLabel.change(string: "알림", key: .foregroundColor, value: UIColor.black)
 ```   
 
 ![스크린샷 2024-01-23 오전 11 20 15](https://github.com/appknot/KahLUA/assets/59425581/8e114263-21a9-4ecf-92a1-794f9ec9dc48)
