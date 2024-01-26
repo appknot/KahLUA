@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KahLUA'
-  s.version          = '1.0.6'
+  s.version          = '1.0.7'
   s.summary          = 'KahLUA'
 
 # This description is used to generate tags and improve search results.
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   s.source_files = 'KahLUA/Classes'
   
   s.subspec 'BaseComponent' do |ss|
-      ss.source_files = 'KahLUA/Classes/BaseComponent/*'
+      ss.source_files = 'KahLUA/Classes/KLComponent/*'
   end
   
   s.subspec 'Bxtension' do |ss|

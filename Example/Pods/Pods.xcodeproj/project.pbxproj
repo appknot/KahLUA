@@ -10,9 +10,9 @@
 		12693B592B5652F200588FD7 /* KLLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12693B442B5652F200588FD7 /* KLLabel.swift */; };
 		12693B5A2B5652F200588FD7 /* KLLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12693B442B5652F200588FD7 /* KLLabel.swift */; };
 		12693B5B2B5652F200588FD7 /* KLLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12693B442B5652F200588FD7 /* KLLabel.swift */; };
-		12693B5C2B5652F200588FD7 /* BaseAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12693B452B5652F200588FD7 /* BaseAlert.swift */; };
-		12693B5D2B5652F200588FD7 /* BaseAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12693B452B5652F200588FD7 /* BaseAlert.swift */; };
-		12693B5E2B5652F200588FD7 /* BaseAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12693B452B5652F200588FD7 /* BaseAlert.swift */; };
+		12693B5C2B5652F200588FD7 /* KLAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12693B452B5652F200588FD7 /* KLAlert.swift */; };
+		12693B5D2B5652F200588FD7 /* KLAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12693B452B5652F200588FD7 /* KLAlert.swift */; };
+		12693B5E2B5652F200588FD7 /* KLAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12693B452B5652F200588FD7 /* KLAlert.swift */; };
 		12693B5F2B5652F200588FD7 /* KahLUA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12693B462B5652F200588FD7 /* KahLUA.swift */; };
 		12693B602B5652F200588FD7 /* KahLUA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12693B462B5652F200588FD7 /* KahLUA.swift */; };
 		12693B612B5652F200588FD7 /* KahLUA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12693B462B5652F200588FD7 /* KahLUA.swift */; };
@@ -98,7 +98,7 @@
 /* Begin PBXFileReference section */
 		0F4E7AB452DC5F9AD91C6CF4EF5986D9 /* KahLUA-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KahLUA-prefix.pch"; sourceTree = "<group>"; };
 		12693B442B5652F200588FD7 /* KLLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KLLabel.swift; sourceTree = "<group>"; };
-		12693B452B5652F200588FD7 /* BaseAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAlert.swift; sourceTree = "<group>"; };
+		12693B452B5652F200588FD7 /* KLAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KLAlert.swift; sourceTree = "<group>"; };
 		12693B462B5652F200588FD7 /* KahLUA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KahLUA.swift; path = KahLUA/Classes/KahLUA.swift; sourceTree = "<group>"; };
 		12693B482B5652F200588FD7 /* UIApplication+AK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+AK.swift"; sourceTree = "<group>"; };
 		12693B492B5652F200588FD7 /* CALayer+AK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+AK.swift"; sourceTree = "<group>"; };
@@ -188,14 +188,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		12693B432B5652F200588FD7 /* BaseComponent */ = {
+		12693B432B5652F200588FD7 /* KLComponent */ = {
 			isa = PBXGroup;
 			children = (
 				12693B442B5652F200588FD7 /* KLLabel.swift */,
-				12693B452B5652F200588FD7 /* BaseAlert.swift */,
+				12693B452B5652F200588FD7 /* KLAlert.swift */,
 			);
-			name = BaseComponent;
-			path = KahLUA/Classes/BaseComponent;
+			name = KLComponent;
+			path = KahLUA/Classes/KLComponent;
 			sourceTree = "<group>";
 		};
 		12693B472B5652F200588FD7 /* Extension */ = {
@@ -252,7 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				12693B462B5652F200588FD7 /* KahLUA.swift */,
-				12693B432B5652F200588FD7 /* BaseComponent */,
+				12693B432B5652F200588FD7 /* KLComponent */,
 				12693B472B5652F200588FD7 /* Extension */,
 				E502AAD315BD4977918953ECC8CFA84D /* Pod */,
 				BFA1E4BC75C7B366A908CD90EE00764D /* Support Files */,
@@ -502,7 +502,7 @@
 				12693B602B5652F200588FD7 /* KahLUA.swift in Sources */,
 				12693B932B5652F200588FD7 /* String+AK.swift in Sources */,
 				12693B842B5652F200588FD7 /* UIFont+AK.swift in Sources */,
-				12693B5D2B5652F200588FD7 /* BaseAlert.swift in Sources */,
+				12693B5D2B5652F200588FD7 /* KLAlert.swift in Sources */,
 				12693B872B5652F200588FD7 /* UIButton+AK.swift in Sources */,
 				12693B662B5652F200588FD7 /* CALayer+AK.swift in Sources */,
 				12693B752B5652F200588FD7 /* UIImageView+AK.swift in Sources */,
@@ -530,7 +530,7 @@
 				12693B612B5652F200588FD7 /* KahLUA.swift in Sources */,
 				12693B942B5652F200588FD7 /* String+AK.swift in Sources */,
 				12693B852B5652F200588FD7 /* UIFont+AK.swift in Sources */,
-				12693B5E2B5652F200588FD7 /* BaseAlert.swift in Sources */,
+				12693B5E2B5652F200588FD7 /* KLAlert.swift in Sources */,
 				12693B882B5652F200588FD7 /* UIButton+AK.swift in Sources */,
 				12693B672B5652F200588FD7 /* CALayer+AK.swift in Sources */,
 				12693B762B5652F200588FD7 /* UIImageView+AK.swift in Sources */,
@@ -558,7 +558,7 @@
 				12693B5F2B5652F200588FD7 /* KahLUA.swift in Sources */,
 				12693B922B5652F200588FD7 /* String+AK.swift in Sources */,
 				12693B832B5652F200588FD7 /* UIFont+AK.swift in Sources */,
-				12693B5C2B5652F200588FD7 /* BaseAlert.swift in Sources */,
+				12693B5C2B5652F200588FD7 /* KLAlert.swift in Sources */,
 				12693B862B5652F200588FD7 /* UIButton+AK.swift in Sources */,
 				12693B652B5652F200588FD7 /* CALayer+AK.swift in Sources */,
 				12693B742B5652F200588FD7 /* UIImageView+AK.swift in Sources */,

@@ -13,9 +13,7 @@ public class BaseAlertAppearance {
     public var titleFont: UIFont?
     public var titleColor: UIColor?
     public var messageFont: UIFont?
-    public var messageColor: UIColor?
-    
-    // TODO: label? 속성값?
+    public var messageColor: UIColor?    
 }
 
 public class BaseAlert: UIViewController {
@@ -30,15 +28,18 @@ public class BaseAlert: UIViewController {
     private var alertLeading: NSLayoutConstraint?
     private var alertTrailing: NSLayoutConstraint?
     private var alertBottom: NSLayoutConstraint?
+    private var titleTop: NSLayoutConstraint?
+    private var messageTop: NSLayoutConstraint?
+    private var messageBottom: NSLayoutConstraint?
     private var buttonStackViewHeight: NSLayoutConstraint?
     
-    public let titleLabel: UILabel = {
+    public var titleLabel: UILabel = {
         let label = UILabel()
         label.font = BaseAlertAppearance.shared.titleFont
         label.textColor = BaseAlertAppearance.shared.titleColor
         return label
     }()
-    public let messageLabel: UILabel = {
+    public var messageLabel: UILabel = {
         let label = UILabel()
         label.font = BaseAlertAppearance.shared.messageFont
         label.textColor = BaseAlertAppearance.shared.messageColor
@@ -81,7 +82,6 @@ public class BaseAlert: UIViewController {
         view.addSubview(shadowView)
         
         shadowView.translatesAutoresizingMaskIntoConstraints = false
-        
         alertTop = shadowView.topAnchor.constraint(greaterThanOrEqualTo: self.view.topAnchor, constant: 100)
         alertTop?.isActive = true
         alertLeading = shadowView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 25)
@@ -130,8 +130,9 @@ public class BaseAlert: UIViewController {
         titleLabel.textAlignment = .center
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleTop = titleLabel.topAnchor.constraint(equalTo: alertView.topAnchor, constant: 20)
+        titleTop?.isActive = true
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: alertView.topAnchor, constant: 20),
             titleLabel.leadingAnchor.constraint(equalTo: alertView.leadingAnchor, constant: 10),
             titleLabel.trailingAnchor.constraint(equalTo: alertView.trailingAnchor, constant:  -10)
         ])
@@ -143,11 +144,14 @@ public class BaseAlert: UIViewController {
         messageLabel.textAlignment = .center
         
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        messageTop = messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20)
+        messageTop?.isActive = true
+        messageBottom = messageLabel.bottomAnchor.constraint(equalTo: buttonStackView.topAnchor, constant: -50)
+        messageBottom?.isActive = true
+        
         NSLayoutConstraint.activate([
-            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
             messageLabel.leadingAnchor.constraint(equalTo: alertView.leadingAnchor, constant: 10),
             messageLabel.trailingAnchor.constraint(equalTo: alertView.trailingAnchor, constant: -10),
-            messageLabel.bottomAnchor.constraint(equalTo: buttonStackView.topAnchor, constant: -50),
         ])
     }
     
@@ -165,15 +169,24 @@ public class BaseAlert: UIViewController {
     
     // MARK: - Appearance
     /**
-     AlertView의 최대 사이즈의 마진값 설정
-     leading, trailing은 고정 값
-     top, bottom은 messageLabel 의 사이즈에 따라 늘어난 AlertView의 최소 margin값
+     - leadingMargin : AlertView 완쪽 여백(고정)
+     - trailingMargin : AlertView 오른쪽 여백(고정)
+     - topMinMargin : AlertView의 최대사이즈의 상단 여백
+     - bottomMinMargin : AlertView의 최대사이즈의 하단 여백
+     - titleTopMarin : titleLabel의 상단 여백
+     - messageTopMargin : messageLabel과 titleLabel 사이 여백
+     - messageBottomMargin : messageLabel과 buttonStackView 사이 여백
+     - cornerRadius : AlertView의 모서리 라운딩
+     - isShawdowUse : 그림자 사용 유무
      */
-    public func alertViewConfiguration(leadingMargin: CGFloat = 25,topMinMargin: CGFloat = 100, trailingMargin: CGFloat = -25, bottomMinMargin: CGFloat = -100, cornerRadius: CGFloat = 0, isShadowUse: Bool = true) {
+    public func alertViewConfiguration(leadingMargin: CGFloat = 25,topMinMargin: CGFloat = 100, trailingMargin: CGFloat = -25, bottomMinMargin: CGFloat = -100, titleTopMargin: CGFloat = 20, messageTopMarin: CGFloat = 20, messageBottomMargin: CGFloat = -50, cornerRadius: CGFloat = 0, isShadowUse: Bool = true) {
         alertTop?.constant = topMinMargin
         alertLeading?.constant = leadingMargin
         alertTrailing?.constant = trailingMargin
         alertBottom?.constant = bottomMinMargin
+        titleTop?.constant = titleTopMargin
+        messageTop?.constant = messageTopMarin
+        messageBottom?.constant = messageBottomMargin
         
         alertView.layer.cornerRadius = cornerRadius
         

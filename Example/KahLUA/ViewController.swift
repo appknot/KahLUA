@@ -56,10 +56,10 @@ class ViewController: UIViewController {
         
         // attributedText를 사용하지 않아도 kern, lineHeight 속성을 사용할 수 있음
         let label = KLLabel()
-        label.text = "1234\n1a2b3c4d5e6f7g8h"
+        label.text = "1a2b3c4d5e6f7gㄱAㄴBㄷCㄹDㅁEㅂFㅅG"
         label.backgroundColor = .blue
         label.frame = .init(x: 100, y: 300, width: 200, height: 300)
-        label.numberOfLines = 5
+        label.numberOfLines = 0
         label.textColor = .black
         label.kern = 5.0
         label.textAlignment = .center
@@ -67,10 +67,10 @@ class ViewController: UIViewController {
         label.font = UIFont.boldSystemFont(ofSize: 16)
         // 특정 문자열에 옵션 값을 변경(단일)
         label.change(string: "2", key: .font, value: UIFont.boldSystemFont(ofSize: 24))
-        label.change(string: "34", key: .font, value: UIFont.boldSystemFont(ofSize: 30))
+        label.change(string: "3c4", key: .font, value: UIFont.boldSystemFont(ofSize: 30))
         // 모든 특정 문자열에 옵션 값을 변경
         label.changes(string: "4", key: .foregroundColor, value: UIColor.red)
-        label.changes(regularExpression: "[A-Za-z]", key: .foregroundColor, value: UIColor.purple)
+        label.changes(regularExpression: "[A-Za-z]", key: .foregroundColor, value: UIColor.white)
         self.view.addSubview(label)
         
         // KLLabel를 상속받아, 프로젝트별 스타일 가이드 생성
@@ -85,8 +85,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // alert 생성
-        let alert = BaseAlert(title: "알림", message: "알림 팝업입니다.")
-        
+        let alert = KLAlert(title: "알림", message: "알림 팝업입니다.")
         
         // margin, backgroundColor, spacing등 configuration 설정
         // 아래 setupBackgroundView은 모두 default값으로 변경이 없으면 호출하지 않아도됨.
@@ -101,7 +100,10 @@ class ViewController: UIViewController {
 //            topMinMargin: 100,
 //            trailingMargin: -25,
 //            bottomMinMargin: -100,
-//            cornerRadius: 10,
+//            titleTopMargin: 20,
+//            messageTopMarin: 20,
+//            messageBottomMargin: -50,
+//            cornerRadius: 0,
 //            isShadowUse: true
 //        )
         // 아래 buttonStackViewConfiguration은 모두 default값으로 변경이 없으면 호출하지 않아도됨.
@@ -121,15 +123,15 @@ class ViewController: UIViewController {
 //        alert.titleAttributedString = NSMutableAttributedString(string: "알림", attributes: [.foregroundColor: UIColor.red])
 //        alert.contentAttributedString = NSMutableAttributedString(string: "알림 팝업입니다.", attributes: [.foregroundColor: UIColor.blue])
         
-        // BaseAlertAction 생성
-        let cancelAction = BaseAlertAction(title: "취소", handler: {
+        // KLAlertAction 생성
+        let cancelAction = KLAlertAction(title: "취소", handler: {
             alert.dismiss(animated: false)
         })
         cancelAction.backgroundColor = .black
         cancelAction.titleLabel.font = .systemFont(ofSize: 15)
         cancelAction.titleLabel.textColor = .white
         
-        let confirmAction = BaseAlertAction(title: "확인", handler: {
+        let confirmAction = KLAlertAction(title: "확인", handler: {
             alert.dismiss(animated: false)
         })
         confirmAction.backgroundColor = .black

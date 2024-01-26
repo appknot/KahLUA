@@ -36,23 +36,23 @@ BaseAlertAppearance.shared.messageFont = .systemFont(ofSize: 25)
 BaseAlertAppearance.shared.messageColor = .gray
 ```
 
-### BaseAlert
+### KLAlert
 ```ruby
 // alert 생성
-let alert = BaseAlert(title: "알림", message: "알림 팝업입니다.")
+let alert = KLAlert(title: "알림", message: "알림 팝업입니다.")
 alert.titleLabel.font = .systemFont(ofSize: 20)
 alert.messageLabel.textColor = .gray
 alert.messageLabel.numberOfLines = 0
 
-// BaseAlertAction 생성
-let cancelAction = BaseAlertAction(title: "취소", handler: {
+// KLAlertAction 생성
+let cancelAction = KLAlertAction(title: "취소", handler: {
      alert.dismiss(animated: false)
 })
 cancelAction.backgroundColor = .black
 cancelAction.titleLabel.font = .systemFont(ofSize: 15)
 cancelAction.titleLabel.textColor = .white
         
-let confirmAction = BaseAlertAction(title: "확인", handler: {
+let confirmAction = KLAlertAction(title: "확인", handler: {
      alert.dismiss(animated: false)
 })
 confirmAction.backgroundColor = .black
@@ -65,7 +65,7 @@ alert.addAction(confirmAction)
 alert.show()
 ```
 
-### BaseAlert Configuration
+#### KLAlert Configuration
 ```ruby        
 // margin, backgroundColor, spacing등 configuration 설정
 // 아래 setupBackgroundView은 모두 default값으로 변경이 없으면 호출하지 않아도됨.
@@ -80,7 +80,10 @@ alert.alertViewConfiguration(
     topMinMargin: 100,
     trailingMargin: -25,
     bottomMinMargin: -100,
-    cornerRadius: 10,
+    titleTopMargin: 20,
+    messageTopMarin: 20,
+    messageBottomMargin: -50,
+    cornerRadius: 0,
     isShadowUse: true
 )
 // 아래 buttonStackViewConfiguration은 모두 default값으로 변경이 없으면 호출하지 않아도됨.
@@ -93,7 +96,7 @@ alert.buttonStackViewConfiguration(
 )     
 ```
 
-### BaseAlert AttributedString
+#### KLAlert AttributedString
 ```ruby 
 alert.titleAttributedString = NSMutableAttributedString(string: "알림", attributes: [.foregroundColor: UIColor.red])
 alert.contentAttributedString = NSMutableAttributedString(string: "알림 팝업입니다.", attributes: [.foregroundColor: UIColor.blue])

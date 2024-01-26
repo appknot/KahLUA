@@ -16,12 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
 
-        BaseAlertAppearance.shared.titleFont = .systemFont(ofSize: 30)
-        BaseAlertAppearance.shared.titleColor = .brown
-        BaseAlertAppearance.shared.messageFont = .systemFont(ofSize: 25)
-        BaseAlertAppearance.shared.messageColor = .gray
+        KLAlertAppearance.shared.titleFont = .systemFont(ofSize: 30)
+        KLAlertAppearance.shared.titleColor = .brown
+        KLAlertAppearance.shared.messageFont = .systemFont(ofSize: 25)
+        KLAlertAppearance.shared.messageColor = .gray
         
         return true
     }
