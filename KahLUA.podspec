@@ -30,11 +30,11 @@ Pod::Spec.new do |s|
 
   s.source_files = 'KahLUA/Classes'
   
-  s.subspec 'BaseComponent' do |ss|
+  s.subspec 'KLComponent' do |ss|
       ss.source_files = 'KahLUA/Classes/KLComponent/*'
   end
   
-  s.subspec 'Bxtension' do |ss|
+  s.subspec 'Extension' do |ss|
       ss.source_files = 'KahLUA/Classes/Extension/*'
   end
   

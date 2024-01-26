@@ -27,13 +27,13 @@ label.changes(regularExpression: "[A-Za-z]", key: .foregroundColor, value: UICol
 ```
 ![스크린샷 2024-01-24 오전 10 56 35](https://github.com/appknot/KahLUA/assets/59425581/68cdd27a-ced3-4600-b01a-1b58aecc186a)
 
-### BaseAlert Appearance
+### KLAlert Appearance
 ```ruby
 // 공용 옵션 설정
-BaseAlertAppearance.shared.titleFont = .systemFont(ofSize: 30)
-BaseAlertAppearance.shared.titleColor = .brown
-BaseAlertAppearance.shared.messageFont = .systemFont(ofSize: 25)
-BaseAlertAppearance.shared.messageColor = .gray
+KLAlertAppearance.shared.titleFont = .systemFont(ofSize: 30)
+KLAlertAppearance.shared.titleColor = .brown
+KLAlertAppearance.shared.messageFont = .systemFont(ofSize: 25)
+KLAlertAppearance.shared.messageColor = .gray
 ```
 
 ### KLAlert
